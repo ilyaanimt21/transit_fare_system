@@ -76,44 +76,6 @@ def load_network(data_dir: Path) -> Tuple[Dict[str, Station], Dict[str, List[Edg
     
     return stations, graph, zone_fares, bus_flat, transfer_window_minutes             
 
-#_______________________________________________________
-
-# Sample data, will be replaced with Json files later
-
-#_______________________________________________________
-"""
-def build_sample_network() -> Tuple[Dict[str, Station], Dict[str, List[Edge]]]:
-    stations: Dict[str, Station] = {
-        "WFR": Station("WFR", "Waterfront", 1),
-        "BUR": Station("BUR", "Burrad", 1),
-        "GCT": Station("GCT", "Granville", 1),
-        "STA": Station("STA", "Stadium-Chinatown", 1),
-        "MTR": Station("MTR", "Metrotown", 2),
-        "NWM": Station("NWM", "New Westminster", 2),
-        "SUR": Station("SUR", "Surrey Central", 3),
-        "KGT": Station("KGT", "King George", 3),
-    }
-
-    # Undirected-ish graph: add both directions for simplicity
-    graph: Dict[str, List[Edge]] = {sid: [] for sid in stations}
-
-    def link(a: str, b: str, minutes: int, line: str, mode: str = "TRAIN") -> None: 
-        graph[a].append(Edge(b, minutes, line, mode))
-        graph[b].append(Edge(a, minutes, line, mode))
-
-
-    # A tiny line (route)
-
-    link("WFR", "BUR", 2, "Expo")
-    link("BUR", "GCT", 2, "Expo")
-    link("GCT", "STA", 2, "Expo") 
-    link("STA", "NWM", 14, "Expo")
-    link("NWM", "MTR", 12, "Expo")
-    link("MTR", "SUR", 18, "Expo")
-    link("SUR", "KGT", 4, "Expo")
-
-    return stations, graph
-"""
 
 #_____________________________________________________________________
 # Routing (Dijkstra: shortest time)
