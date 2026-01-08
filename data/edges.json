@@ -1,0 +1,17 @@
+[
+  {"from":"WFR","to":"BRD","minutes":2,"line":"Expo","mode":"TRAIN"},
+  {"from":"BRD","to":"GCT","minutes":2,"line":"Expo","mode":"TRAIN"},
+  {"from":"GCT","to":"STA","minutes":2,"line":"Expo","mode":"TRAIN"},
+  {"from":"STA","to":"MPS","minutes":3,"line":"Expo","mode":"TRAIN"},
+  {"from":"MPS","to":"CMB","minutes":3,"line":"Expo","mode":"TRAIN"},
+
+  {"from":"CMB","to":"NWM","minutes":12,"line":"Expo","mode":"TRAIN"},
+  {"from":"NWM","to":"MTR","minutes":12,"line":"Expo","mode":"TRAIN"},
+  {"from":"MTR","to":"SUR","minutes":18,"line":"Expo","mode":"TRAIN"},
+  {"from":"SUR","to":"KGT","minutes":4,"line":"Expo","mode":"TRAIN"},
+
+  {"from":"VCC","to":"CMB","minutes":4,"line":"Millennium","mode":"TRAIN"},
+  {"from":"CMB","to":"LHG","minutes":18,"line":"Millennium","mode":"TRAIN"},
+
+  {"from":"WFR","to":"STA","minutes":4,"line":"Canada","mode":"TRAIN"}
+]

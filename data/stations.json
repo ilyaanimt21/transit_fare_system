@@ -1,0 +1,14 @@
+[
+  {"id":"WFR","name":"Waterfront","zone":1},
+  {"id":"BRD","name":"Burrard","zone":1},
+  {"id":"GCT","name":"Granville","zone":1},
+  {"id":"STA","name":"Stadium-Chinatown","zone":1},
+  {"id":"MPS","name":"Main Street-Science World","zone":1},
+  {"id":"CMB","name":"Commercial-Broadway","zone":1},
+  {"id":"NWM","name":"New Westminster","zone":2},
+  {"id":"MTR","name":"Metrotown","zone":2},
+  {"id":"LHG","name":"Lougheed Town Centre","zone":2},
+  {"id":"VCC","name":"VCC-Clark","zone":1},
+  {"id":"SUR","name":"Surrey Central","zone":3},
+  {"id":"KGT","name":"King George","zone":3}
+]
