@@ -85,12 +85,6 @@ This mirrors how real-world transit fare systems apply transfer and zone rules.
 
 The program will display the route, lines travelled, transfers, zones crossed and the fare charged.        
 
-main.py
-data/
-  ├── stations.json   # station definitions and zones
-  ├── edges.json      # network connections, lines, and travel times
-  └── fares.json      # fare rules and transfer window
-
 Future Improvements:
 
 Station search by name (instead of station IDs)
