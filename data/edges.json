@@ -13,5 +13,11 @@
   {"from":"VCC","to":"CMB","minutes":4,"line":"Millennium","mode":"TRAIN"},
   {"from":"CMB","to":"LHG","minutes":18,"line":"Millennium","mode":"TRAIN"},
 
-  {"from":"WFR","to":"STA","minutes":4,"line":"Canada","mode":"TRAIN"}
+  {"from":"WFR","to":"STA","minutes":4,"line":"Canada","mode":"TRAIN"},
+
+  {"from":"CMB","to":"GCT","minutes":10,"line":"99 B-Line","mode":"BUS"},
+  {"from":"CMB","to":"BRD","minutes":12,"line":"Broadway","mode":"BUS"},
+  {"from":"MPS","to":"WFR","minutes":9,"line":"Downtown Shuttle","mode":"BUS"},
+  {"from":"MTR","to":"LHG","minutes":20,"line":"R5 RapidBus","mode":"BUS"}
+
 ]

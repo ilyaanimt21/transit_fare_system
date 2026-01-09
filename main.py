@@ -37,7 +37,13 @@ class FareSession:
 # Load Json data 
 # _______________________________________________________
 
-def load_network(data_dir: Path) -> Tuple[Dict[str, Station], Dict[str, List[Edge]], Dict[int, float], float]:
+def load_network(data_dir: Path) -> Tuple[
+    Dict[str, Station], 
+    Dict[str, List[Edge]], 
+    Dict[int, float], 
+    float, 
+    int
+]:
     stations_path = data_dir / "stations.json"
     edges_path = data_dir / "edges.json"
     fares_path = data_dir / "fares.json"
@@ -147,21 +153,24 @@ def zones_crossed(stations: Dict[str, Station], path: List[str]) -> int:
 # ________________________________________________________________________
 
 def infer_mode_for_path(graph: Dict[str, List[Edge]], path: List[str]) -> str:
-    """ 
-    If any segment is BUS, mark BUS: else TRAIN.    
+    """     
+    If ANY segment is TRAIN, treat the trip as TRAIN (zone-based).
+    Only return BUS if ALL the segments are BUS.
     """
-
     if len(path) < 2:
         return "TRAIN"
     
-    # mode = "TRAIN"
-    for a, b in zip(path, path[1:]):
-        edges = graph[a]
-        for e in edges:
-            if e.to_id == b and e.mode.upper() == "BUS": 
-                return "BUS"
+    saw_train = False
+    for a, b in zip(path, path[1: ]):
+        e = edge_info(graph, a, b)
+        if e.mode.upper() == "TRAIN":
+            saw_train = True
 
-    return "TRAIN"
+    if saw_train == True:
+        return "TRAIN"
+    else:
+        return "BUS"        
+
 
 def compute_fare(zones: int, mode: str, zone_fares: Dict[int, float], bus_flat_fare: float) -> float:
     mode = mode.upper()
@@ -334,7 +343,8 @@ def main() -> None:
 
         start = get_station_choice("\nEnter departure station ID: ", stations)
         goal = get_station_choice("Enter destination station ID: ", stations)
-        trip_time = get_time_minute("Enter time (Hours:Minutes): ")
+        trip_time = get_time_minute("Enter trip start time (Hours:Minutes): ")
+        # Time is used for transfer window and fare logic, not travel duration. 
 
         
         if start == goal:
@@ -354,7 +364,6 @@ def main() -> None:
                 
                 z = zones_crossed(stations, path)
                 mode = infer_mode_for_path(graph, path)
-                fare = compute_fare(z, mode, zone_fares, bus_flat)
                 required = trip_required_zones(mode, z)
 
                 charge, session = compute_fare_with_transfer_window(
@@ -380,7 +389,7 @@ def main() -> None:
                 print(f"Zones crossed: (route): {z}")
                 print(f"Mode:(simple): {mode}")
                 print(f"Required fare level: {required} zone(s)")
-                print(f"Fare: ${fare:.2f}")
+                print(f"Charged now: ${charge:.2f}")
 
                 if session is not None:
                     expires_at = session.start_minute + window_minutes
