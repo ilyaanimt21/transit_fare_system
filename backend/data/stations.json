@@ -1,0 +1,14 @@
+[
+  {"id":"WFR","name":"Waterfront","zone":1,"lat":49.2854,"lng":-123.1115},
+  {"id":"BRD","name":"Burrard","zone":1,"lat":49.2855,"lng":-123.1201},
+  {"id":"GCT","name":"Granville","zone":1,"lat":49.2834,"lng":-123.1193},
+  {"id":"STA","name":"Stadium-Chinatown","zone":1,"lat":49.2791,"lng":-123.1093},
+  {"id":"MPS","name":"Main Street-Science World","zone":1,"lat":49.2732,"lng":-123.1002},
+  {"id":"CMB","name":"Commercial-Broadway","zone":1,"lat":49.2630,"lng":-123.0694},
+  {"id":"NWM","name":"New Westminster","zone":2,"lat":49.2057,"lng":-122.9112},
+  {"id":"MTR","name":"Metrotown","zone":2,"lat":49.2276,"lng":-122.9993},
+  {"id":"LHG","name":"Lougheed Town Centre","zone":2,"lat":49.2484,"lng":-122.8966},
+  {"id":"VCC","name":"VCC-Clark","zone":1,"lat":49.2654,"lng":-123.0793},
+  {"id":"SUR","name":"Surrey Central","zone":3,"lat":49.1893,"lng":-122.8481},
+  {"id":"KGT","name":"King George","zone":3,"lat":49.1826,"lng":-122.8451}
+]

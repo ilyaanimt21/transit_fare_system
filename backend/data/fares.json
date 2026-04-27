@@ -1,0 +1,9 @@
+{
+  "zone_fares": {
+    "1": 2.50,
+    "2": 3.75,
+    "3": 4.90
+  },
+  "bus_flat_fare": 2.50,
+  "transfer_window_minutes": 60
+}
